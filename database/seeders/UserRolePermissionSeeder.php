@@ -77,8 +77,8 @@ class UserRolePermissionSeeder extends Seeder
     public function createUser()
     {
         $result['admin'] = User::create([
-            'name' => 'Admin Suryadi',
-            'email' => 'suryadi.hhb@gmail.com',
+            'name' => 'Admin System',
+            'email' => 'admin@email.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
@@ -86,7 +86,7 @@ class UserRolePermissionSeeder extends Seeder
 
         $result['manager'] = User::create([
             'name' => 'Manager',
-            'email' => 'manager@gmail.com',
+            'email' => 'manager@email.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
@@ -94,7 +94,7 @@ class UserRolePermissionSeeder extends Seeder
 
         $result['spv'] = User::create([
             'name' => 'spv',
-            'email' => 'spv@gmail.com',
+            'email' => 'spv@email.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
@@ -106,7 +106,7 @@ class UserRolePermissionSeeder extends Seeder
     public function createUserProfile()
     {
         // Buat profil untuk Admin
-        $admin = User::where('email', 'suryadi.hhb@gmail.com')->first();
+        $admin = User::where('email', 'suryadi.hhb@email.com')->first();
         if ($admin) {
             $admin->profile()->create([
                 'no_hp' => '089678468651',
@@ -118,7 +118,7 @@ class UserRolePermissionSeeder extends Seeder
         }
 
         // Buat profil untuk Manager
-        $manager = User::where('email', 'manager@gmail.com')->first();
+        $manager = User::where('email', 'manager@email.com')->first();
         if ($manager) {
             $manager->profile()->create([
                 'no_hp' => '08123456799',
